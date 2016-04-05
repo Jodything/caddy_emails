@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Caddy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <style type="text/css">
+    /* CLIENT-SPECIFIC STYLES */
+
+    body,
+    table,
+    td,
+    a {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    /* Prevent WebKit and Windows mobile changing default text sizes */
+
+    table,
+    td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    /* Remove spacing between tables in Outlook 2007 and up */
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+    /* Allow smoother rendering of resized image in Internet Explorer */
+    /* RESET STYLES */
+
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+
+    table {
+      border-collapse: collapse !important;
+    }
+
+    body {
+      height: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+    }
+    /* iOS BLUE LINKS */
+
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+    /* MOBILE STYLES */
+
+    @media screen and (max-width: 525px) {
+      /* ALLOWS FOR FLUID TABLES */
+      .wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      /* ADJUSTS LAYOUT OF LOGO IMAGE */
+      .logo img {
+        margin: 0 auto !important;
+      }
+      /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+      .mobile-hide {
+        display: none !important;
+      }
+      .img-max {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+      /* FULL-WIDTH TABLES */
+      .responsive-table {
+        width: 100% !important;
+      }
+      /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+      .padding {
+        padding: 10px 5% 15px 5% !important;
+      }
+      .padding-meta {
+        padding: 30px 5% 0px 5% !important;
+        text-align: center;
+      }
+      .padding-copy {
+        padding: 10px 5% 10px 5% !important;
+        text-align: center;
+      }
+      .no-padding {
+        padding: 0 !important;
+      }
+      .section-padding {
+        padding: 50px 15px 50px 15px !important;
+      }
+      /* ADJUST BUTTONS ON MOBILE */
+      .mobile-button-container {
+        margin: 0 auto;
+        width: 100% !important;
+      }
+      .mobile-button {
+        padding: 15px !important;
+        border: 0 !important;
+        font-size: 16px !important;
+        display: block !important;
+      }
+    }
+    /* ANDROID CENTER FIX */
+
+    div[style*="margin: 16px 0;"] {
+      margin: 0 !important;
+    }
+  </style>
+</head>
+
+<body style="margin: 0 !important; padding: 0 !important;">
+
+  <!-- HEADER -->
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td bgcolor="#34363a" align="center">
+        <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+            <tr>
+            <td align="center" valign="top" width="500">
+            <![endif]-->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;border-top-right-radius:30px;border-top-left-radius:30px;margin-top: 15px;" class="wrapper">
+          <tr>
+            <td align="center" valign="top" style="padding: 15px 0;" class="logo">
+              <a href="{{siteLink}}" target="_blank">
+                <img src="https://gallery.mailchimp.com/fc5cceb2ff567d8c07e555774/images/d1a7f13c-978f-4d8c-9cf6-5f10728056b0.png" alt="Caddy Logo" title="Caddy Logo" width="50" height="50" style="display: block;" border="0">
+              </a>
+            </td>
+          </tr>
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+      </td>
+    </tr>
+
+    <tr>
+      <td bgcolor="#f8f9fb" align="center" style="padding-top: 25px;">
+        <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+            <tr>
+            <td align="center" valign="top" width="500">
+            <![endif]-->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="responsive-table" bgcolor="f8f9fb">
+          <tr>
+            <td>
+              <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td valign="top" class="mobile-wrapper">
+                    <!-- LEFT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="left">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="left" style="font-family: Arial, sans-serif; color: #585b60;">
+                                <h4 style="font-weight: bold; color: #585b60; margin-bottom: 5px;text-transform: uppercase;font-family: Verdana;text-align:center;">Buyer</h4>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60;text-align: center;font-size:12px;">
+                                <span style="text-transform:capitalize">{{buyer.name}}</span><br/>
+                                <a style="color:#bd9d72; text-decoration: none;" href="mailto:{{buyerEmail}}?subject=Caddy Driver Inquiry">{{buyer.email}}</a><br/>
+                                <a style="color:#bd9d72; text-decoration: none;" href="tel:{{buyerMobile}}">{{buyer.mobile}}</a>
+
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- RIGHT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="right">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60;">
+                                <h4 style="font-weight: bold; color: #585b60; margin-bottom: 5px;text-transform: uppercase;font-family: Verdana;text-align:center;">Delivery</h4>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60;text-align: center;font-size:12px;">
+                                {{delRule}} <br/>
+                                {{delivery.number}} {{delivery.street}}<br/>
+                                {{delivery.city}}, {{delivery.state}} {{delivery.zipcode}}
+
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td bgcolor="#f8f9fb" align="center" style="padding-top:25px">
+        <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+            <tr>
+            <td align="center" valign="top" width="500">
+            <![endif]-->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="responsive-table" bgcolor="f8f9fb">
+          <tr>
+            <td style="padding-left: 15px; padding-right: 15px;">
+              <!-- COPY -->
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center" style="padding: 20px 0 20px 0; font-size: 16px; line-height: 25px; font-family: Verdana, Arial, sans-serif; color: #585b60;" class="padding-copy">
+                    Order #: <span style="color: #70757d">{{orderNumber}}</span><br/>
+                    Payment: <span style="color: #70757d">{{paymentStatus}}</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+      </td>
+    </tr>
+
+    <tr>
+      <td bgcolor="#f8f9fb" align="center">
+        <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+            <tr>
+            <td align="center" valign="top" width="500">
+            <![endif]-->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;margin-bottom:15px;" class="responsive-table" bgcolor="#f8f9fb">
+          {{#each orders}}
+
+            <tr>
+              <td style="padding-left: 15px; padding-right: 15px;">
+                <!-- COPY -->
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="center" style="padding: 20px 0 5px 0; line-height: 25px; font-family: Verdana, Arial, sans-serif; color: #585b60;">
+                      <h4 style="margin-bottom: 5px;border-bottom:1px solid #eee; text-transform: uppercase;">{{store.name}} <span style="color:#70757d; font-size:10px; text-transform:initial;">({{orderNumber}} of {{orderTotal}})</span></h4>
+                      <!-- LEFT COLUMN -->
+                      <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="left">
+                        <tr>
+                          <td style="padding: 0;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                              <tr>
+                                <td align="right" style="font-family: Arial, sans-serif; color: #585b60;text-align: center;font-size:12px;">
+                                  <a style="color:#bd9d72; text-decoration: none;" href="mailto:{{store.contact.email}}?subject=Caddy Order">{{store.contact.email}}</a><br/>
+                                  <a style="color:#bd9d72; text-decoration: none;" href="tel:{{store.contact.sms}}">{{store.contact.sms}}</a>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- RIGHT COLUMN -->
+                      <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="right">
+                        <tr>
+                          <td style="padding: 0;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                              <tr>
+                                <td align="right" style="font-family: Arial, sans-serif; color: #585b60;text-align: center;font-size:12px;">
+                                  {{store.address.number}} {{store.address.street}}<br/>
+                                  {{store.address.city.name}}, {{store.address.state}} {{store.address.zipcode}}
+
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+
+          {{#if products}}
+          <tr>
+            <td style="padding: 10px 15px 0 15px;">
+              <!-- TWO COLUMNS -->
+              <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td valign="top" class="mobile-wrapper">
+                    <p style="font-weight: 100; color: #585b60; text-transform: uppercase;font-family: Verdana;font-size: 10px;text-align:left;">Products</p>
+                    <hr style="display:block;height:1px;border:0;border-top:1px solid #eee;margin:1em 0;padding:0;"/> {{#each products}}
+                    <!-- LEFT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="left">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="left" style="font-family: Arial, sans-serif; color: #585b60; font-size: 16px;">{{name}} ({{quantity}})</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- RIGHT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="right">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 16px;">${{price}}</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <table cellpadding="0" cellspacing="0" border="0" width="75%" style="width: 75%;" align="left">
+                      <tr>
+                        <td style="padding: 0 0 10px 30px;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="left" style="font-family: Arial, sans-serif; color: #70757d; font-size: 14px;">temp: <span style="color:#585b60">{{temperature}}</span></td>
+                            </tr>
+                            <tr>
+                              <td align="left" style="font-family: Arial, sans-serif; color: #70757d; font-size: 14px;">instructions: <span style="color: #585b60">{{instructions}}</span></td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    {{/each}}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          {{/if}} {{#if takeoutProducts}}
+          <tr>
+            <td style="padding: 10px 15px 0 15px;">
+              <!-- TWO COLUMNS -->
+              <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td valign="top" class="mobile-wrapper">
+                    <p style="font-weight: 100; color: #585b60; text-transform: uppercase;font-family: Verdana;font-size: 10px;text-align:left;">Takeout Products</p>
+                    <hr style="display:block;height:1px;border:0;margin:1em 0;padding:0;"/> {{#each takeoutProducts}}
+                    <!-- LEFT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="left">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="left" style="font-family: Arial, sans-serif; color: #585b60; font-size: 16px;">{{name}} ({{quantity}})</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- RIGHT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="right">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 16px;">${{price}}</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <table cellpadding="0" cellspacing="0" border="0" width="75%" style="width: 75%;" align="left">
+                      <tr>
+                        <td style="padding: 0 0 10px 30px;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="left" style="font-family: Arial, sans-serif; color: #70757d; font-size: 14px;">temp: <span style="color:#585b60">{{temperature}}</span></td>
+                            </tr>
+                            <tr>
+                              <td align="left" style="font-family: Arial, sans-serif; color: #70757d; font-size: 14px;">instructions: <span style="color: #585b60">{{instructions}}</span></td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    {{/each}}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          {{/if}} {{#if options}}
+          <tr>
+            <td style="padding: 10px 15px 0 15px;">
+              <!-- TWO COLUMNS -->
+              <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td valign="top" class="mobile-wrapper">
+                    <p style="font-weight: 100; color: #585b60; text-transform: uppercase;font-family: Verdana;font-size: 10px;text-align:center;">Options</p>
+                    <hr style="display:block;height:1px;border:0;border-top:1px solid #eee;margin:1em 0;padding:0;"/> {{#each orders.options}}
+                    <!-- LEFT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="left">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="left" style="font-family: Arial, sans-serif; color: #585b60; font-size: 16px;">{{name}} ({{quantity}})</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- RIGHT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="right">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 16px;">${{price}}</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    {{/each}}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          {{/if}}
+          {{/each}}
+          <tr>
+            <td style="padding: 10px 15px 0 15px;">
+              <!-- TWO COLUMNS -->
+              <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td valign="top" class="mobile-wrapper">
+
+
+                    <!-- LEFT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="left">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="left" style="font-family: Arial, sans-serif; color: #585b60; font-size: 14px;">tax </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- RIGHT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="right">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 14px;">${{tax}}</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding: 10px 0 0px 0; border-top: 1px solid #ccc;">
+              <!-- TWO COLUMNS -->
+              <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td valign="top" class="mobile-wrapper" style="padding: 15px 15px;">
+                    <!-- LEFT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="left">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="left" style="font-family: Arial, sans-serif; color: #585b60; font-size: 16px; font-weight: bold;">Total</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- RIGHT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="right">
+                      <tr>
+                        <td>
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #bd9d72; font-size: 16px; font-weight: bold;">${{total}}</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+      </td>
+    </tr>
+
+    <tr>
+      <td bgcolor="#ffffff" align="center" style="padding: 20px 0px;">
+        <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+            <tr>
+            <td align="center" valign="top" width="500">
+            <![endif]-->
+        <!-- UNSUBSCRIBE COPY -->
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="max-width: 500px;" class="responsive-table">
+          <tr>
+            <td align="center" style="font-size: 12px; line-height: 18px; font-family: Verdana, Arial, sans-serif; color:#70757d;">
+              800 Market Street, Chattanooga, TN 37402, USA
+            </td>
+          </tr>
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+      </td>
+    </tr>
+  </table>
+
+</body>
+
+</html>
