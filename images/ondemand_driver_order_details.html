@@ -325,9 +325,13 @@
                           <table cellpadding="0" cellspacing="0" border="0" width="100%">
                             <tr>
                               <td align="right" style="font-family: Arial, sans-serif; color: #585b60;text-align: center;font-size:12px;">
-                                {{store.address.number}} {{store.address.street}}
-                                <br/> {{store.address.city.name}}, {{store.address.state}} {{store.address.zipcode}}
-
+                                {{#if storeLocation}}
+                                  {{storeLocation.address.number}} {{storeLocation.address.street}}
+                                  <br /> {{storeLocation.address.city}} {{storeLocation.address.state}} {{storeLocation.address.zipcode}}
+                                {{else}}
+                                  {{store.address.number}} {{store.address.street}}
+                                  <br/> {{store.address.city.name}}, {{store.address.state}} {{store.address.zipcode}}
+                                {{/if}}
                               </td>
                             </tr>
                           </table>
