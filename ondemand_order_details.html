@@ -5,7 +5,7 @@
   <title>Caddy</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <style type="text/css">
     /* CLIENT-SPECIFIC STYLES */
 
@@ -227,7 +227,7 @@
                             </tr>
                             <tr>
                               <td align="right" style="font-family: Arial, sans-serif; color: #585b60;text-align: center;font-size:12px;">
-                                {{delRule}}
+                                  {{delRule}}
                                 <br/> {{delivery.number}} {{delivery.street}}
                                 <br/> {{delivery.city}}, {{delivery.state}} {{delivery.zipcode}}
 
@@ -340,7 +340,7 @@
                 <tr>
                   <td valign="top" class="mobile-wrapper">
                     <p style="font-weight: 100; color: #585b60; text-transform: uppercase;font-family: Verdana;font-size: 10px;text-align:left;">Products</p>
-                    <hr style="display:block;height:1px;border:0;border-top:1px solid #eee;margin:1em 0;padding:0;" /> {{#each products}}
+                    <hr style="display:block;height:1px;border:0;border-top:1px solid #eee;margin:1em 0;padding:0;"/> {{#each products}}
                     <!-- LEFT COLUMN -->
                     <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="left">
                       <tr>
@@ -359,7 +359,7 @@
                         <td style="padding: 0 0 10px 0;">
                           <table cellpadding="0" cellspacing="0" border="0" width="100%">
                             <tr>
-                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 16px;">${{price}}</td>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 16px;">{{price}}</td>
                             </tr>
                           </table>
                         </td>
@@ -393,7 +393,7 @@
                 <tr>
                   <td valign="top" class="mobile-wrapper">
                     <p style="font-weight: 100; color: #585b60; text-transform: uppercase;font-family: Verdana;font-size: 10px;text-align:left;">Takeout Products</p>
-                    <hr style="display:block;height:1px;border:0;margin:1em 0;padding:0;" /> {{#each takeoutProducts}}
+                    <hr style="display:block;height:1px;border:0;margin:1em 0;padding:0;"/> {{#each takeoutProducts}}
                     <!-- LEFT COLUMN -->
                     <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="left">
                       <tr>
@@ -412,7 +412,7 @@
                         <td style="padding: 0 0 10px 0;">
                           <table cellpadding="0" cellspacing="0" border="0" width="100%">
                             <tr>
-                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 16px;">${{price}}</td>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 16px;">{{price}}</td>
                             </tr>
                           </table>
                         </td>
@@ -446,7 +446,7 @@
                 <tr>
                   <td valign="top" class="mobile-wrapper">
                     <p style="font-weight: 100; color: #585b60; text-transform: uppercase;font-family: Verdana;font-size: 10px;text-align:center;">Options</p>
-                    <hr style="display:block;height:1px;border:0;border-top:1px solid #eee;margin:1em 0;padding:0;" /> {{#each orders.options}}
+                    <hr style="display:block;height:1px;border:0;border-top:1px solid #eee;margin:1em 0;padding:0;"/> {{#each options}}
                     <!-- LEFT COLUMN -->
                     <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="left">
                       <tr>
@@ -465,7 +465,7 @@
                         <td style="padding: 0 0 10px 0;">
                           <table cellpadding="0" cellspacing="0" border="0" width="100%">
                             <tr>
-                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 16px;">${{price}}</td>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 16px;">{{price}}</td>
                             </tr>
                           </table>
                         </td>
@@ -492,7 +492,7 @@
                         <td style="padding: 0 0 10px 0;">
                           <table cellpadding="0" cellspacing="0" border="0" width="100%">
                             <tr>
-                              <td align="left" style="font-family: Arial, sans-serif; color: #585b60; font-size: 14px;">tax </td>
+                              <td align="left" style="font-family: Arial, sans-serif; color: #585b60; font-size: 14px;">sales tax </td>
                             </tr>
                           </table>
                         </td>
@@ -504,7 +504,83 @@
                         <td style="padding: 0 0 10px 0;">
                           <table cellpadding="0" cellspacing="0" border="0" width="100%">
                             <tr>
-                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 14px;">${{tax}}</td>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 14px;">{{tax}}</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- <tr>
+            <td style="padding: 10px 15px 0 15px;">
+
+              <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td valign="top" class="mobile-wrapper">
+
+
+
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="left">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="left" style="font-family: Arial, sans-serif; color: #585b60; font-size: 14px;">Subtotal </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="right">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 14px;">{{subTotal}}</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr> -->
+
+          <tr>
+            <td style="padding: 10px 15px 0 15px;">
+              <!-- TWO COLUMNS -->
+              <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td valign="top" class="mobile-wrapper">
+
+
+                    <!-- LEFT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="left">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="left" style="font-family: Arial, sans-serif; color: #585b60; font-size: 14px;">delivery fee </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- RIGHT COLUMN -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="47%" style="width: 47%;" align="right">
+                      <tr>
+                        <td style="padding: 0 0 10px 0;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #585b60; font-size: 14px;">{{deliveryFee}}</td>
                             </tr>
                           </table>
                         </td>
@@ -540,7 +616,7 @@
                         <td>
                           <table cellpadding="0" cellspacing="0" border="0" width="100%">
                             <tr>
-                              <td align="right" style="font-family: Arial, sans-serif; color: #bd9d72; font-size: 16px; font-weight: bold;">${{total}}</td>
+                              <td align="right" style="font-family: Arial, sans-serif; color: #bd9d72; font-size: 16px; font-weight: bold;">{{grandTotal}}</td>
                             </tr>
                           </table>
                         </td>
@@ -573,10 +649,10 @@
           <tr>
             <td align="center" style="font-size: 12px; line-height: 18px; font-family: Verdana, Arial, sans-serif;">
               <a style="text-decoration:none" href="{{facebookLink}}">
-                <img style="margin-left:15px;margin-right:15px;" src="https://gallery.mailchimp.com/fc5cceb2ff567d8c07e555774/images/9dbeaefb-8945-4a13-b22a-f4a6104eb981.png" />
+                <img style="margin-left:15px;margin-right:15px;" src="https://gallery.mailchimp.com/fc5cceb2ff567d8c07e555774/images/9dbeaefb-8945-4a13-b22a-f4a6104eb981.png"/>
               </a>
               <a style="text-decoration:none" href="{{twitterLink}}">
-                <img style="margin-left:15px;margin-right:15px;" src="https://gallery.mailchimp.com/fc5cceb2ff567d8c07e555774/images/3291a317-2c50-4e9a-802f-27304740e97d.png" />
+                <img style="margin-left:15px;margin-right:15px;" src="https://gallery.mailchimp.com/fc5cceb2ff567d8c07e555774/images/3291a317-2c50-4e9a-802f-27304740e97d.png"/>
               </a>
             </td>
           </tr>
